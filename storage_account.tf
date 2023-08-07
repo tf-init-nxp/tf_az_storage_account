@@ -1,12 +1,3 @@
-locals {
-
-  tags = tomap({
-    environment = var.environment
-    producto    = var.producto
-  })
-
-}
-
 resource "azurerm_storage_account" "storage_account" {
   name                          = var.storage_account_name
   resource_group_name           = var.resource_group_name
@@ -16,7 +7,6 @@ resource "azurerm_storage_account" "storage_account" {
   account_kind                  = var.account_kind
   min_tls_version               = var.min_tls_version
   public_network_access_enabled = var.public_network_access_enabled
-
-  tags = local.tags
+  tags                          = local.tags
 
 }

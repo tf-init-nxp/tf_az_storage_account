@@ -26,32 +26,24 @@ variable "account_tier" {
   description = "Accout Tier"
 }
 
-variable "environment" {
-  type    = string
-  default = "development"
-}
-
-variable "producto" {
-  type    = string
-  default = "proto-type"
-}
-
 variable "account_kind" {
   type    = string
   default = "StorageV2"
 }
 
-
-
 variable "min_tls_version" {
   type    = string
   default = "TLS1_2"
-
 }
-
 
 variable "public_network_access_enabled" {
   type    = bool
   default = false
 
+}
+
+variable "extra_tags" {
+  description = "Map of custom tags."
+  type        = map(string)
+  default     = {}
 }
